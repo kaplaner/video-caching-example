@@ -143,7 +143,7 @@ function storeVideo(mp4Blob, webmBlob, name) {
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/video-caching-example/sw.js')
+             .register('sw.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
 };
