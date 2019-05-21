@@ -119,6 +119,14 @@ function storeVideo(mp4Blob, webmBlob, name) {
 
     // Store the opened database object in the db variable. This is used a lot below
     db = request.result;
+    
+    // Show if we have something in indexedDB / for standalone mode 
+    var transaction = db.transaction(["videos"], "readonly");
+    var objectStore = transaction.objectStore("videos");
+
+    objectStore.getAllKeys().onsuccess = function(event) {
+      alert("Got all videos: " + event.target.result.join("\n"));
+    };
     init();
   };
 
