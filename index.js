@@ -37,10 +37,10 @@ function init() {
     console.log('fetching videos from network');
     // Fetch the MP4 and WebM versions of the video using the fetch() function,
     // then expose their response bodies as blobs
-    let mp4Blob = fetch('videos/' + video.name + '.mp4').then(response =>
+    let mp4Blob = fetch(video.name + '.mp4').then(response =>
       response.blob()
     );
-    let webmBlob = fetch('videos/' + video.name + '.webm').then(response =>
+    let webmBlob = fetch(video.name + '.webm').then(response =>
       response.blob()
     );;
 
@@ -143,7 +143,7 @@ function storeVideo(mp4Blob, webmBlob, name) {
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/learning-area/javascript/apis/client-side-storage/cache-sw/video-store-offline/sw.js')
+             .register('/video-caching-example/sw.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
 };
