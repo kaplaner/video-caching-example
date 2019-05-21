@@ -1,0 +1,6 @@
+{
+   "name": "PWA Citia",
+   "short_name": "PWA C",
+   "start_url": "./index.html",
+   "display": "standalone"
+}
